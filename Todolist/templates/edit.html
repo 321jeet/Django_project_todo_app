@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todolist</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        crossorigin="anonymous">
+
+</head>
+<body>
+    <div class="container-fluid">
+        <h1 class="display-1 text-center mt-3  bg-info">Todo List Update</h1>
+        <form action="/update/{{todolists.id}}" method="POST" class="row g-3 mt-3">
+           {% csrf_token %}
+            <div class="col-10">
+                
+                <input type="text" class="form-control" placeholder="Type here..........." autocomplete="off"
+                  value="{{todolists.text}}"  name="textitle"  required>
+                 
+            </div>
+            <div class="col-2">
+                <input type="submit" class=" btn btn-primary" value="Update">
+            </div>
+        
+        </form>
+</body>
+</html>
