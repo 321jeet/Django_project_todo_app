@@ -42,4 +42,4 @@ def Update(request,id):
     todo_list=TODO.objects.get(id=id)
     todo_list.text=request.POST['textitle']
     todo_list.save()
-    return redirect ('/')
+    return redirect ('TodO')
